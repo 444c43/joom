@@ -1,10 +1,13 @@
-= form_tag :sign_in, method: :post do
-  %dl
-    %dt= label_tag :email
-    %dd= text_field_tag :email
+= content_for :stylesheet do
+  = stylesheet_link_tag :home
+  = form_tag :sign_in, method: :post do
+    %fieldset
+      %dl
+        %dt= label_tag :email
+        %dd= text_field_tag :email
 
-    %dt= label_tag :password
-    %dd= text_field_tag :password
+        %dt= label_tag :password
+        %dd= text_field_tag :password
 
-  .actions
-    = submit_tag 'sign in', class: 'button'
+      .actions
+        = submit_tag 'sign in', class: 'button'

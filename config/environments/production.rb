@@ -14,7 +14,7 @@ Dl::Application.configure do
   config.assets.digest = true
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( home.sass )
+  config.assets.precompile += %w( home.sass session.sass)
 
   config.i18n.fallbacks = true
 

@@ -1,8 +1,37 @@
+@import 'mixins'
+$green: #229b2e
+
 header
   height: 400px
   div#main
-    // float: none
     width: 315px
     margin: 0 auto
     padding: 200px
     background: url('/assets/circle.png') 175px 90px no-repeat
+
+body
+  section
+    border: none
+    position: relative
+    form
+      position: absolute
+      left: 400px
+      top: 50px
+      width: 200px
+      fieldset
+        margin: 0 auto
+        dt
+          margin: 15px 0 0 0
+        dd
+          margin: 5px
+          input[type=text], input[type=password]
+            width: 100%
+            padding: 5px 5px
+            border: solid 2px #000000
+            +border-radius(5px)
+            background: transparent
+        .actions
+          input[type="submit"]
+            margin: 10px  0 0 0
+            float: right
+            +button($green)

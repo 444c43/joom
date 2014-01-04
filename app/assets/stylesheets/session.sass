@@ -1,0 +1,26 @@
+@import 'mixins'
+$green: #229b2e
+
+body
+  section
+    border: none
+form
+  margin: 100px 0 0 20px
+  width: 300px
+  fieldset
+    padding-left: 50px
+    dt
+      margin: 15px 0 0 0
+    dd
+      margin: 5px
+      input[type=text], input[type=password]
+        width: 100%
+        padding: 5px 5px
+        border: solid 2px #000000
+        +border-radius(5px)
+        background: transparent
+    .actions
+      input[type="submit"]
+        margin: 10px  0 0 0
+        float: right
+        +button($green)
