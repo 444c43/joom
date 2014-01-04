@@ -9,6 +9,7 @@ gem 'pg'
 gem 'rails', '3.2.8'
 gem 'rdiscount'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'capybara', '1.1.2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
