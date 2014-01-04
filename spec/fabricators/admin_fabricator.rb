@@ -1,6 +1,4 @@
 Fabricator(:admin) do
-  email           "MyString"
-  password_digest "MyString"
-  remember_token  "MyString"
-  session_token   "MyString"
+  email 'dl@example.com'
+  password 'password'
 end

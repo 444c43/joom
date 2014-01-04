@@ -1,4 +1,1 @@
-Fabricator(:post) do
-  body      "MyText"
-  published false
-end
+Fabricator(:post) do; end
