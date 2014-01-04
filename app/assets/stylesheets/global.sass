@@ -1,2 +1,89 @@
-h1
-  color: blue
+@import 'mixins'
+$karla: 'Karla', sans-serif
+$sans: arial, sans-serif
+$blue: #2f98dd
+$red: #a0511d
+$green: #229b2e
+$yellow: #dcde37
+$white: #ffffff
+$black: #000000
+
+*
+  text-decoration: none
+  color: #ffffff
+  font: normal normal 14px $sans
+
+body
+  width: 100%
+  background: url('/assets/bg.jpg')
+  header
+    #main
+      padding: 55px 45px
+      background: url('/assets/circle.png') 20px -55px no-repeat
+    .sign_in
+      position: absolute
+      right: 20px
+      top: 10px
+    h1
+      font: normal bold 48px $karla
+      *
+        font: normal bold 48px $karla
+      span:nth-child(1)
+        color: $black
+    nav.social_links
+      a
+        float: left
+        height: 38px
+        width: 38px
+        display: block
+        text-indent: -6969px
+        margin: 45px 35px 45px 0
+        &.twitter
+          background: url('/assets/twitter.png') 0 0 no-repeat
+          margin-right: 20px
+        &.github
+          background: url('/assets/github.png') 0 0 no-repeat
+          width: 51px
+    nav
+      a
+        font: normal bold 18px $sans
+        margin-right: 15px
+        &:hover
+          color: $black
+      clear: left
+  section
+    position: absolute
+    left: 400px
+    top: 0px
+    border-left: solid $green 20px
+    padding-left: 3px
+    article
+      background: url('/assets/article_bg.jpg')
+      width: 700px
+      padding: 55px 40px 40px 40px
+      margin-bottom: 1px
+      position: relative
+      +box-shadow(0px 0px 2px 0px #111111)
+      .admin
+        position: absolute
+        top: 10px
+        right: 20px
+      h1
+        font: normal normal 24px $sans
+        color: $white
+        margin-bottom: 27px
+      h2
+        font: normal normal 20px $sans
+        color: $red
+        margin-bottom: 18px
+      p
+        text-align: justify
+      &.photo
+        text-align: center
+        span.photo_container
+          display: inline-block
+          padding: 5px 5px 2px 5px
+          background: #000000
+          +border-radius(5px)
+          border: solid 2px #ffffff
+

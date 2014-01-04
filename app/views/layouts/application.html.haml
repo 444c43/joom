@@ -1,20 +1,26 @@
 !!!
 %html
   %head
-    %title 2toneDL 
+    %title mrmicahcooper
     = stylesheet_link_tag 'global'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Karla:400,700'
     = javascript_include_tag 'application'
     = yield :stylesheet
   %body
     %header
       .sign_in
         = link_to "sign in", "#"
-      %h1 2toneDL 
-      %nav.social_links
-        = link_to "Twitter", "#"
-        = link_to "Github", "#"
-      %nav
-        = link_to "Blog", "#"
-        = link_to "Photos", "#"
+      #main
+        %a{ href: root_path }
+          %h1<>
+            2 
+            %span<> tone
+            DL
+        %nav.social_links
+          = link_to "Twitter", "http://twitter.com/2toneDL", class: "twitter"
+          = link_to "Github", "http://github.com/444c43", class: "github"
+        %nav
+          = link_to "Blog", "#"
+          = link_to "Photos", "#"
     %section
       = yield
