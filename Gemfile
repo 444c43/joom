@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'authem'
 gem 'carrierwave'
 gem 'decent_exposure', '~> 2.0.0.rc1'
 gem 'haml-rails'
