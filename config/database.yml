@@ -4,7 +4,7 @@ development:
   database: dl_development
   pool: 5
 
-test:
+test: &test
   adapter: postgresql
   encoding: unicode
   database: dl_test
@@ -15,3 +15,6 @@ production:
   encoding: unicode
   database: dl_production
   pool: 5
+
+cucumber:
+  <<: *test
