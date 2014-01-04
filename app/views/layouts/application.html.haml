@@ -8,8 +8,6 @@
     = yield :stylesheet
   %body
     %header
-      .sign_in
-        = link_to "sign in", "#"
       #main
         %a{ href: root_path }
           %h1<>
@@ -20,7 +18,7 @@
           = link_to "Twitter", "http://twitter.com/2toneDL", class: "twitter"
           = link_to "Github", "http://github.com/444c43", class: "github"
         %nav
-          = link_to "Blog", "#"
+          = link_to "Blog", :blog
           = link_to "Photos", "#"
     %section
       = yield
