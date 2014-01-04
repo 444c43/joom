@@ -7,4 +7,6 @@ Dl::Application.routes.draw do
   post '/sign_in', to: 'sessions#create', as: :sign_in
   get '/sign_out', to: 'sessions#destroy', as: :sign_out
 
+  resources :posts, only: [:new, :create, :index]
+
 end

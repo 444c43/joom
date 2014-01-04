@@ -11,7 +11,7 @@
       - if signed_in?
         .admin_actions
           = link_to 'sign out', :sign_out
-          = link_to '+ add post', "#"
+          = link_to '+ add post', :new_post
       #main
         %a{ href: root_path }
           %h1<>
