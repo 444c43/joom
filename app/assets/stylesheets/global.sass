@@ -41,9 +41,13 @@ body
         &.twitter
           background: url('/assets/twitter.png') 0 0 no-repeat
           margin-right: 20px
+          &:hover
+            background: url('/assets/twitter_hover.png') 0 0 no-repeat
         &.github
           background: url('/assets/github.png') 0 0 no-repeat
           width: 51px
+          &:hover
+            background: url('/assets/github_hover.png') 0 0 no-repeat
     nav
       a
         font: normal bold 18px $sans
@@ -86,4 +90,16 @@ body
           background: #000000
           +border-radius(5px)
           border: solid 2px #ffffff
-
+    form
+      margin-bottom: 30px
+      div.field
+        margin: 10px
+        textarea
+          width: 100%
+          height: 500px
+          border: solid 2px #000000
+          +border-radius(5px)
+          background: transparent
+        input[type="submit"]
+          float: right
+          +button($green)

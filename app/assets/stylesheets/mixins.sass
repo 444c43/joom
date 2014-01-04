@@ -84,106 +84,31 @@ $prefixes: moz webkit o ms khtml
   @each $prefix in $prefixes
     -#{$prefix}-transform: rotate(#{$deg}deg)
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$deg / 90})
-= image-replace($img, $type:png)
-  display: block
-  font-size: 1px
-  text-indent: -8685px
-  overflow: hidden
-  background: url(#{$img}.#{$type}) no-repeat
 = font-face($font_name, $font_path)
   @font-face
     font-family: '#{$font_name}'
     src: url('#{$font_path}.eot')
     src: url('#{$font_path}.eot?iefix') format('eot'), url('#{$font_path}.woff') format('woff'), url('#{$font_path}.ttf') format('truetype'), url('#{$font_path}.svg#webfont') format('svg')
-= box-sizing($type: border-box)
-  @each $prefix in moz, ms, webkit
-    -#{$prefix}-box-sizing: $type
-  box-sizing: $type
-
-= input($width: 150px)
-  width: $width
-  height: 20px
-  padding: 2px 5px
-  font: normal 12px Helvetica, Arial, sans-serif
-  color: #000f24
-  border: 1px solid #929497
-  +border-radius(3px)
-  +gradient_bg(#ffffff, #ececec)
-  &::-webkit-input-placeholder
-    color: #000f24
-
 = box
   background: #ffffff
   +box-shadow(0 1px 1px rgba(24, 24, 24, .15))
 
-= pad_modal($unit)
-  top: $unit
-  right: $unit
-  bottom: $unit
-  left: $unit
-
 = submit
   padding: 8px 18px 7px 18px
-  font: normal 14px $francois, Helvetica, Arial, sans-serif
+  font: normal 14px inherit
   text-transform: uppercase
   color: #ffffff
   border: none
   background: #6699cc url("bg_submit.png") 50% 0 no-repeat
 
-= button
+= button($color1:nil)
   display: inline-block
   padding: 5px 10px
-  font: normal 12px $francois
+  font: normal 12px inherit
   text-transform: uppercase
-  color: #6699cc
-  background: #e9ebee
-
-+font-face("FrancoisOneRegular", "FrancoisOne-webfont")
-$francois: "FrancoisOneRegular", Helvetica, sans-serif
-
-= section_subpage
-  h1, h2, h3
-    font: normal 30px $francois
-    text-transform: uppercase
-  h2, h3
-    font-size: 22px
-    color: #6699cc
-    padding: 0 0 8px 0
-  h3, h4, h5, h6
-    font-size: 18px
-    padding: 0 0 7px 0
-  h4, h5, h6
-    font-size: 14px
-    color: #6699cc
-  p, img
-    margin-bottom: 20px
-  ul, ol
-    padding-left: 40px
-    margin-bottom: 15px
-  ul
-    list-style: disc outside
-  ol
-    list-style: decimal outside
-  li
-    font-weight: bold
-    padding-bottom: 5px
-  img
-    border: 1px solid #b6b6ad
-    &.left
-      float: left
-      margin-right: 20px
-    &.right
-      float: right
-      margin-left: 20px
-
-= general_styles
-  a
-    text-decoration: none
-    color: #6699cc
-    &:hover
-      color: #3dace3
-
-  body
-    font: normal 12px Helvetica, Arial, sans-serif
-    color: #221e1f
-
+  border: none
+  +gradient_bg($color1, $color1 - 40)
+  +border-radius(5px)
+  &:hover
+    +box-shadow(1px 1px 0px 0px #222222)
+    +gradient_bg($color1 + 10, $color1 - 60)
