@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.8'
 gem 'rdiscount'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
