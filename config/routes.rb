@@ -5,5 +5,6 @@ Dl::Application.routes.draw do
   get '/blog', to: 'posts#index', as: :blog
   get '/sign_in', to: 'sessions#new', as: :sign_in
   post '/sign_in', to: 'sessions#create', as: :sign_in
+  get '/sign_out', to: 'sessions#destroy', as: :sign_out
 
 end

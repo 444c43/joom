@@ -7,10 +7,11 @@ $green: #229b2e
 $yellow: #dcde37
 $white: #ffffff
 $black: #000000
+$light_gray: #bdd1de
 
 *
   text-decoration: none
-  color: #ffffff
+  color: $white
   font: normal normal 14px $sans
 
 body
@@ -20,10 +21,17 @@ body
     #main
       padding: 55px 45px
       background: url('/assets/circle.png') 20px -55px no-repeat
-    .sign_in
+    .admin_actions
       position: absolute
       right: 20px
       top: 10px
+      a
+        border-right: solid 2px $light_gray
+        padding: 3px 10px 3px 5px
+        &:hover
+          color: $blue
+        &:last-child
+          border: none
     h1
       font: normal bold 48px $karla
       *

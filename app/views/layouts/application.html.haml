@@ -8,6 +8,10 @@
     = yield :stylesheet
   %body
     %header
+      - if signed_in?
+        .admin_actions
+          = link_to 'sign out', :sign_out
+          = link_to '+ add post', "#"
       #main
         %a{ href: root_path }
           %h1<>
