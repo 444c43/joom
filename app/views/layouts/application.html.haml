@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title 2toneDL 
+    = stylesheet_link_tag 'global'
+    = javascript_include_tag 'application'
+    = yield :stylesheet
+  %body
+    %header
+      .sign_in
+        = link_to "sign in", "#"
+      %h1 2toneDL 
+      %nav.social_links
+        = link_to "Twitter", "#"
+        = link_to "Github", "#"
+      %nav
+        = link_to "Blog", "#"
+        = link_to "Photos", "#"
+    %section
+      = yield
