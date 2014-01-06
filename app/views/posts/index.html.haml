@@ -1,4 +1,6 @@
-- posts.each do |post|
+- published_posts.each do |post|
   %article
+    .admin
+      = link_to 'edit', edit_post_path(post)
     :markdown
       #{post.body}

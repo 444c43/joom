@@ -1,0 +1,10 @@
+%article.blog
+  = form_for post do |field|
+    .field
+      %label(for="post_published")
+        publish?
+        = field.check_box :published
+    .field
+      = field.text_area :body
+    .field
+      = field.submit 'save post'

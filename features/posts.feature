@@ -8,6 +8,17 @@ Feature: Posts
     And I follow "Blog"
     Then I should see "This is the body of a post. You better read it"
 
+  Scenario: Admin edits post
+    Given the following post:
+      | body      | This is the body of the post. You better read it |
+      | published | true                                             |
+    And I am signed in
+    And I follow "Blog"
+    And I follow "edit"
+    And I fill in "post_body" with "this is the edited post"
+    And I press "save post"
+    Then I should see "this is the edited post"
+
   Scenario: Visitor doesn't see unpublished posts
     Given the following post:
       | body      | This is the body of a post. You better read it |
@@ -28,3 +39,4 @@ Feature: Posts
     Given I am on the home page
     When I go to the new post page
     Then I should be on the sign in page
+
