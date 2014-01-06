@@ -7,6 +7,10 @@ class PostsController < ApplicationController
 
   expose(:post)
 
+  def index
+    @posts = signed_in? ? posts : published_posts
+  end
+
   def create
     if post.save
       redirect_to :posts

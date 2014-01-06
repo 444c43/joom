@@ -1,6 +1,7 @@
-- published_posts.each do |post|
+- @posts.each do |post|
   %article
     .admin
+      = "*un-published" unless post.published
       = link_to 'edit', edit_post_path(post)
     :markdown
       #{post.body}
