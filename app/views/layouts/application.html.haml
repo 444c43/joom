@@ -3,7 +3,7 @@
   %head
     %title 2toneDL
     = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Karla:400,700'
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Karla:400,700|Duru+Sans'
     = javascript_include_tag 'application'
     = yield :stylesheet
   %body
@@ -23,6 +23,5 @@
           = link_to "Github", "http://github.com/444c43", class: "github"
         %nav
           = link_to "Blog", :blog
-          = link_to "Photos", "#"
     %section
       = yield
