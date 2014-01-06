@@ -8,6 +8,9 @@ module NavigationHelpers
     when 'the sign in page'
       '/sign_in'
 
+    when 'the new post page'
+      '/posts/new'
+
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

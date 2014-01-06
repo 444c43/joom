@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_filter :require_user, except: :index
+
   expose(:posts)
   expose(:post)
 

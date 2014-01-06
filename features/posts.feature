@@ -23,3 +23,8 @@ Feature: Posts
     And I check "publish?"
     And I press "add post"
     Then I should see "this is a post"
+
+  Scenario: Non admin cannot add posts
+    Given I am on the home page
+    When I go to the new post page
+    Then I should be on the sign in page
