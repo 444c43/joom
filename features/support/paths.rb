@@ -11,6 +11,9 @@ module NavigationHelpers
     when 'the new post page'
       '/posts/new'
 
+    when 'the blog page'
+      '/blog'
+
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

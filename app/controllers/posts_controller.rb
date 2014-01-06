@@ -13,10 +13,15 @@ class PostsController < ApplicationController
 
   def create
     if post.save
-      redirect_to :posts
+      redirect_to :blog
     end
   end
 
   alias update create
+
+  def destroy
+    post.destroy
+    redirect_to :blog
+  end
 
 end
