@@ -12,12 +12,17 @@ gem 'rdiscount'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'capybara', '1.1.2'
 
+group :production do
+  gem 'newrelic_rpm'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'uglifier', '>= 1.0.3'
 end
 
 group :development, :test do
+  gem 'heroku'
   gem 'fabrication'
   gem 'pry'
 end
