@@ -12,7 +12,7 @@ $light_gray: #bdd1de
 *
   text-decoration: none
   color: $white
-  font: normal normal 13px $sans
+  font: normal normal 14px $sans
 
 body
   width: 100%
@@ -75,7 +75,7 @@ body
     padding-left: 3px
     article
       background: url('/assets/article_bg.jpg')
-      width: 700px
+      width: 800px
       padding: 55px 40px 40px 40px
       margin-bottom: 1px
       position: relative
@@ -93,12 +93,21 @@ body
         color: $red
         margin-bottom: 18px
       p
-        font: normal normal 12px "Duru Sans"
+        font: normal normal 14px "Duru Sans"
         text-align: justify
         padding: 5px 0
         line-height: 1.5em
+      div.highlight
+        padding: 10px
+        border: solid $blue 1px
+        margin: 10px 0
+        background: #0f212b
+        overflow-y: auto
+        +border-radius(5px)
+        pre
+          font: normal normal 14px 'Monaco', 'Lucida Console', monospace
       a
-        font: normal normal 12px "Duru Sans"
+        font: normal normal 14px "Duru Sans"
         color: $green
       &.photo
         text-align: center
