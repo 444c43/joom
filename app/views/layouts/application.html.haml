@@ -23,7 +23,7 @@
           = link_to "Twitter", "http://twitter.com/2toneDL", class: "twitter"
           = link_to "Github", "http://github.com/444c43", class: "github"
         %nav
-          = link_to "Blog", :blog
-          = link_to "Photos", :photos
+          = active_link_to "Blog", :blog
+          = active_link_to "Photos", :photos
     %section
       = yield
