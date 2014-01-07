@@ -23,7 +23,7 @@ body
       background: url('/assets/circle.png') 20px -55px no-repeat
     .admin_actions
       position: absolute
-      right: 20px
+      left: 20px
       top: 10px
       a
         border-right: solid 2px $light_gray
@@ -46,16 +46,17 @@ body
         display: block
         text-indent: -6969px
         margin: 45px 35px 45px 0
+        background: url('/assets/hover_sprite.png')
         &.twitter
-          background: url('/assets/twitter.png') 0 0 no-repeat
+          background-position: 0 0
           margin-right: 20px
           &:hover
-            background: url('/assets/twitter_hover.png') 0 0 no-repeat
+            background-position: -50px 0
         &.github
-          background: url('/assets/github.png') 0 0 no-repeat
+          background-position: 0 -100px
           width: 51px
           &:hover
-            background: url('/assets/github_hover.png') 0 0 no-repeat
+            background-position: -50px -100px
     nav
       a
         font: normal bold 18px $sans
