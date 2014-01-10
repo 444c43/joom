@@ -4,7 +4,6 @@
       %label(for="post_published")
         publish?
         = field.check_box :published
-    .field
-      = field.text_area :body
-    .field
-      = field.submit 'add post'
+    .field= field.text_field :title
+    .field= field.text_area :body
+    .field= field.submit 'add post'

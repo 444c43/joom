@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
-  attr_accessible :published, :body
+
+  attr_accessible :published, :body, :title
 
   default_scope order('created_at DESC')
 

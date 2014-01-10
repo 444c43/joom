@@ -34,6 +34,7 @@ Feature: Posts
     Given I am signed in
     When I follow "+ add post"
     And I fill in "post_body" with "this is a post"
+    And I fill in "post_title" with "Hello post"
     And I check "publish?"
     And I press "add post"
     Then I should see "this is a post"
