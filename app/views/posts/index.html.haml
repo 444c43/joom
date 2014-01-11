@@ -1,11 +1,5 @@
 - @posts.each do |post|
   %article
-    - if signed_in?
-      .admin
-        = "*un-published" unless post.published
-        = link_to 'edit', edit_post_path(post)
-        = "-"
-        = link_to 'delete', post_path(post), 
-          method: :delete, confirm: "You sure?"
+    = render('admin_links', post: post) if signed_in?
     %h1= link_to post.title, post_path(post.slug)
-    = markdown(post.body)
+    = markdown(post.body[0..195])

@@ -11,6 +11,9 @@ module NavigationHelpers
     when 'the new post page'
       '/posts/new'
 
+    when 'the first post page'
+      "/posts/#{@post.slug}"
+
     when 'the blog page'
       '/blog'
 

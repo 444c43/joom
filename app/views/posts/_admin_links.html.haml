@@ -1,0 +1,6 @@
+.admin
+  = "*un-published" unless post.published
+  = link_to 'edit', edit_post_path(post.slug)
+  = "-"
+  = link_to 'delete', post_path(post.slug),
+    method: :delete, confirm: "You sure?"
