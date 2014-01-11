@@ -8,6 +8,16 @@ Feature: Posts
     And I follow "Blog"
     Then I should see "This is the body of a post. You better read it"
 
+  Scenario: Visitor views post
+    Given the following post:
+      | body      | This is the body of a post. You better read it |
+      | published | true                                           |
+      | title     | First Post                                     |
+    When I am on the home page
+    And I follow "Blog"
+    And I follow "First Post"
+    Then I should be on the first post page
+
   Scenario: Admin edits post, then deletes it
     Given the following post:
       | body      | This is the body of the post. You better read it |

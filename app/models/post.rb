@@ -6,4 +6,12 @@ class Post < ActiveRecord::Base
 
   scope :published, where(published: true)
 
+  validates :title, presence: true
+
+  before_save :create_slug
+
+  def build_slug
+    self.slug = title.parameterize
+  end
+
 end
