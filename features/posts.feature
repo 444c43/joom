@@ -26,7 +26,7 @@ Feature: Posts
     And I follow "Blog"
     And I follow "edit"
     And I fill in "post_body" with "this is the edited post"
-    And I press "save post"
+    And I press "Update Post"
     Then I should see "this is the edited post"
     When I follow "delete"
     Then I should be on the blog page
@@ -46,7 +46,7 @@ Feature: Posts
     And I fill in "post_body" with "this is a post"
     And I fill in "post_title" with "Hello post"
     And I check "publish?"
-    And I press "add post"
+    And I press "Create Post"
     Then I should see "this is a post"
 
   Scenario: Non admin cannot add posts

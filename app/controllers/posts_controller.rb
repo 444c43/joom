@@ -4,7 +4,6 @@ class PostsController < ApplicationController
 
   expose(:posts)
   expose(:published_posts) { Post.published }
-
   expose(:post, finder: :find_by_slug_or_id)
 
   def index
@@ -13,15 +12,23 @@ class PostsController < ApplicationController
 
   def create
     if post.save
-      redirect_to :blog
+      redirect_to :blog_home
+    else
+      render :new
     end
   end
 
-  alias update create
+  def update
+    if post.save
+      redirect_to :blog
+    else
+      render :edit
+    end
+  end
 
   def destroy
     post.destroy
-    redirect_to :blog
+    redirect_to :blog_home
   end
 
 end

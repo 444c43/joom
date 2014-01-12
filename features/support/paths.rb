@@ -9,10 +9,10 @@ module NavigationHelpers
       '/sign_in'
 
     when 'the new post page'
-      '/posts/new'
+      '/blog/new'
 
     when 'the first post page'
-      "/posts/#{@post.slug}"
+      "/blog/#{@post.slug}"
 
     when 'the blog page'
       '/blog'
