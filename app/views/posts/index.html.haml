@@ -3,3 +3,4 @@
     = render('admin_links', post: post) if signed_in?
     %h1= link_to post.title, post_path(post.slug)
     = markdown(post.body[0..195])
+    %p.read_more= link_to 'Read more...', post_path(post.slug)
