@@ -1,5 +1,1 @@
-%article.blog
-  = form_for post do |field|
-    .field= field.check_box_with_label :published, "publish?"
-    .field= field.text_area :body
-    .field= field.submit 'save post'
+= render 'form', post: post
