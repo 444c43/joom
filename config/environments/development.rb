@@ -1,4 +1,4 @@
-Dl::Application.configure do
+Joom::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -13,7 +13,7 @@ Dl::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
+  # Joomon't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
@@ -29,7 +29,7 @@ Dl::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  # Do not compress assets
+  # Joomo not compress assets
   config.assets.compress = false
 
   # Expands the lines which load the assets

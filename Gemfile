@@ -9,10 +9,11 @@ gem 'nokogiri'
 gem 'picasa'
 gem 'pg'
 gem 'pygmentize'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'redcarpet'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'capybara', '1.1.2'
+gem 'rename'
 
 group :production do
   gem 'newrelic_rpm'

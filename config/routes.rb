@@ -1,4 +1,4 @@
-Dl::Application.routes.draw do
+Joom::Application.routes.draw do
   match 'ui(/:action)', controller: 'ui'
   root to: 'pages#home'
 

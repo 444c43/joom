@@ -1,4 +1,4 @@
-Dl::Application.configure do
+Joom::Application.configure do
   config.cache_classes = true
 
   config.consider_all_requests_local       = false

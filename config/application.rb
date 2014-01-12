@@ -9,7 +9,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Dl
+module Joom
   class Application < Rails::Application
     config.encoding = "utf-8"
 

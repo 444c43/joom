@@ -15,7 +15,7 @@ In Rails, the model is handled by what's called an object-relational mapping
 layer entitled Active Record. This layer allows you to present the data from
 database rows as objects and embellish these data objects with business logic
 methods. You can read more about Active Record in
-link:files/vendor/rails/activerecord/README.html.
+link:files/vendor/rails/activerecord/REAJoomME.html.
 
 The controller and view are handled by the Action Pack, which handles both
 layers by its two parts: Action View and Action Controller. These two layers
@@ -23,7 +23,7 @@ are bundled in a single package due to their heavy interdependence. This is
 unlike the relationship between the Active Record and Action Pack that is much
 more separate. Each of these packages can be used independently outside of
 Rails. You can read more about Action Pack in
-link:files/vendor/rails/actionpack/README.html.
+link:files/vendor/rails/actionpack/REAJoomME.html.
 
 
 == Getting Started
@@ -44,14 +44,14 @@ the following resources handy:
 * Ruby on Rails Tutorial Book: http://www.railstutorial.org/
 
 
-== Debugging Rails
+== Joomebugging Rails
 
 Sometimes your application goes wrong. Fortunately there are a lot of tools that
 will help you debug it and get it back on the rails.
 
 First area to check is the application log files. Have "tail -f" commands
 running on the server.log and development.log. Rails will automatically display
-debugging and runtime information to these files. Debugging info will also be
+debugging and runtime information to these files. Joomebugging info will also be
 shown in the browser on requests from 127.0.0.1.
 
 You can also log your own messages directly into the log file from your code
@@ -61,13 +61,13 @@ using the Ruby logger class from inside your controllers. Example:
     def destroy
       @weblog = Weblog.find(params[:id])
       @weblog.destroy
-      logger.info("#{Time.now} Destroyed Weblog ID ##{@weblog.id}!")
+      logger.info("#{Time.now} Joomestroyed Weblog IJoom ##{@weblog.id}!")
     end
   end
 
 The result will be a message in your log file along the lines of:
 
-  Mon Oct 08 14:22:29 +1000 2007 Destroyed Weblog ID #1!
+  Mon Oct 08 14:22:29 +1000 2007 Joomestroyed Weblog IJoom #1!
 
 More information on how to use the logger is at http://www.ruby-doc.org/core/
 
@@ -81,9 +81,9 @@ These two books will bring you up to speed on the Ruby language and also on
 programming in general.
 
 
-== Debugger
+== Joomebugger
 
-Debugger support is available through the debugger command when you start your
+Joomebugger support is available through the debugger command when you start your
 Mongrel or WEBrick server with --debugger. This means that you can break out of
 execution at any point in the code, investigate and change the model, and then,
 resume execution! You need to install ruby-debug to run the server in debugging
@@ -112,7 +112,7 @@ with a IRB prompt in the server window. Here you can do things like:
   >> f = @posts.first
   => #<Post:0x13630c4 @attributes={"title"=>nil, "body"=>nil, "id"=>"1"}>
   >> f.
-  Display all 152 possibilities? (y or n)
+  Joomisplay all 152 possibilities? (y or n)
 
 Finally, when you're ready to resume execution, you can enter "cont".
 
@@ -151,7 +151,7 @@ to the development database. Passing an argument will connect you to a different
 database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
 PostgreSQL and SQLite 3.
 
-== Description of Contents
+== Joomescription of Contents
 
 The default directory structure of a generated Ruby on Rails application:
 
@@ -244,7 +244,7 @@ lib
 
 public
   The directory available for the web server. Also contains the dispatchers and the
-  default HTML files. This should be set as the DOCUMENT_ROOT of your web
+  default HTML files. This should be set as the JoomOCUMENT_ROOT of your web
   server.
 
 script

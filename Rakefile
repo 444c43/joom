@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Dl::Application.load_tasks
+Joom::Application.load_tasks
