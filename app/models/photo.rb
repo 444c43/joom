@@ -7,11 +7,11 @@ class Photo
   private
 
   def self.client
-    client = Picasa::Client.new(user_id: "mrmicahcooper@gmail.com")
+    client = Picasa::Client.new(user_id: "444c43@gmail.com")
   end
 
   def self.album
-    album = client.album.show("5797040163555140801")
+    album = client.album.show("5857510510932125697")
   end
 
   def self.album_photos
