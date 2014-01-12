@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'authem'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'capybara', '1.1.2'
 gem 'carrierwave'
 gem 'decent_exposure', '~> 2.0.0.rc1'
 gem 'haml-rails'
@@ -11,13 +13,6 @@ gem 'pg'
 gem 'pygmentize'
 gem 'rails', '3.2.13'
 gem 'redcarpet'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'capybara', '1.1.2'
-gem 'rename'
-
-group :production do
-  gem 'newrelic_rpm'
-end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -37,4 +32,8 @@ group :test do
   gem 'dirty'
   gem 'launchy'
   gem 'rspec-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
