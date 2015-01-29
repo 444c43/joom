@@ -5,7 +5,7 @@ Joom::Application.configure do
 
   config.action_controller.perform_caching = true
 
-  config.serve_static_assets = false
+  config.serve_static_assets = true 
 
   config.assets.compress = true
 
