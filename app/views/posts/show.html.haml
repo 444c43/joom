@@ -1,4 +1,5 @@
 %article
   = render 'admin_links' if signed_in?
   %h1= post.title
+  = post.created_at.strftime("%d%b%y")
   = markdown(post.body)
