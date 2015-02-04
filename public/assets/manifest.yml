@@ -1,8 +1,4 @@
 ---
-article_bg.jpg: article_bg-531cc295c1698b8a2fce6729cac2acbf.jpg
-article_bg/index.jpg: article_bg-531cc295c1698b8a2fce6729cac2acbf.jpg
-bg.jpg: bg-eee46d49d7b3d58c0cff56e336eaec62.jpg
-bg/index.jpg: bg-eee46d49d7b3d58c0cff56e336eaec62.jpg
 circle.png: circle-fb62fb380bb7ee9dbc57a9f4873686f7.png
 circle/index.png: circle-fb62fb380bb7ee9dbc57a9f4873686f7.png
 github.png: github-2cb9159e8ee0f24e7e69e87768165b0e.png
@@ -19,7 +15,7 @@ twitter_hover.png: twitter_hover-3b414999a972c6e4ef90ef95fd43d99d.png
 twitter_hover/index.png: twitter_hover-3b414999a972c6e4ef90ef95fd43d99d.png
 application.js: application-ae521e9ca2c5a8b369b4e1d0d8771da5.js
 application/index.js: application-ae521e9ca2c5a8b369b4e1d0d8771da5.js
-application.css: application-3a48399bdad0b22f81483faa9f7c0d94.css
-application/index.css: application-3a48399bdad0b22f81483faa9f7c0d94.css
+application.css: application-7b5ab3d5c9d9518eb24eb89975a294bd.css
+application/index.css: application-7b5ab3d5c9d9518eb24eb89975a294bd.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
