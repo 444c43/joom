@@ -25,6 +25,7 @@ group :development, :test do
   gem 'heroku'
   gem 'fabrication'
   gem 'pry'
+  gem 'pry-debugger'
   gem 'therubyracer'
 end
 
