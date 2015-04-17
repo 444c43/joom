@@ -1,8 +1,7 @@
 Joom::Application.routes.draw do
 
   match 'ui(/:action)', controller: 'ui'
-  #root to: 'posts#index'
-  root to: 'pages#home'
+  root to: 'posts#index'
 
   get '/sign_in', to: 'sessions#new', as: :sign_in
   post '/sign_in', to: 'sessions#create', as: :sign_in
