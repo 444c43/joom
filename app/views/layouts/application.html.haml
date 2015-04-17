@@ -26,5 +26,7 @@
         %nav
           = active_link_to "Blog", :blog_home
           = active_link_to "Photos", photos_path
+        %nav.bubble
+          = post.tag_list[0]
     %section
       = yield

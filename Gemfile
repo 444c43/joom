@@ -5,14 +5,13 @@ source 'https://rubygems.org'
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'authem'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'capybara', '1.1.2'
+gem 'capybara', '2.2.0'
 gem 'carrierwave'
 gem 'decent_exposure', '~> 2.0.0.rc1'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'pg'
-gem 'picasa'
 gem 'pygmentize'
 gem 'rails', '3.2.21'
 gem 'redcarpet'
@@ -31,7 +30,6 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'dirty'
   gem 'launchy'
