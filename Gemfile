@@ -2,6 +2,7 @@ ruby '2.0.0'
 
 source 'https://rubygems.org'
 
+gem 'acts-as-taggable-on', '~> 3.4'
 gem 'authem'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'capybara', '1.1.2'
@@ -10,10 +11,10 @@ gem 'decent_exposure', '~> 2.0.0.rc1'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'nokogiri'
-gem 'picasa'
 gem 'pg'
+gem 'picasa'
 gem 'pygmentize'
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.21'
 gem 'redcarpet'
 
 group :assets do

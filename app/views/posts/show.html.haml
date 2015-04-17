@@ -2,6 +2,7 @@
   = render 'admin_links' if signed_in?
   %h1= post.title
   = post.created_at.strftime("%d%b%y")
+  = post.tag_list[0]
   = markdown(post.body)
   #disqus_thread
   :javascript
