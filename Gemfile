@@ -1,31 +1,29 @@
-ruby '2.0.0'
+ruby '2.2.1'
 
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 gem 'authem'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'capybara', '2.2.0'
+gem 'bcrypt-ruby', '~> 3.1.5'
+gem 'capybara', '2.5.0'
 gem 'carrierwave'
-gem 'decent_exposure', '~> 2.0.0.rc1'
+gem 'decent_exposure', '~> 2.3.2'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'pg'
 gem 'pygmentize'
-gem 'rails', '3.2.21'
+gem 'rails', '4.2.5.rc2'
 gem 'redcarpet'
+gem 'test-unit'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails'
+gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'heroku'
   gem 'fabrication'
   gem 'pry'
-  gem 'pry-debugger'
   gem 'therubyracer'
 end
 
