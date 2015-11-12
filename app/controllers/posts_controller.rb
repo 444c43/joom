@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  before_filter :require_user, except: [:index, :show]
+  before_filter :require_admin, except: [:index, :show]
 
   expose(:posts)
   expose(:published_posts) { Post.published }
-  expose(:post, finder: :find_by_slug_or_id)
+  expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
   def index
-    @posts = signed_in? ? posts : published_posts
+    @posts = admin_signed_in? ? posts : published_posts
   end
 
   def create
@@ -30,4 +30,13 @@ class PostsController < ApplicationController
     redirect_to :blog_home
   end
 
+  private
+
+  def post_attributes
+    params.require(:post).permit(
+      :published,
+      :body,
+      :title
+    )
+  end
 end
