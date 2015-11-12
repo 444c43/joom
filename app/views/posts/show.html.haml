@@ -1,5 +1,5 @@
 %article
-  = render 'admin_links' if signed_in?
+  = render 'admin_links' if admin_signed_in?
   %h1= post.title
   = post.created_at.strftime("%d%b%y")
   = post.tag_list[0]

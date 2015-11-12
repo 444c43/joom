@@ -10,7 +10,7 @@
 
   %body
     %header
-      - if signed_in?
+      - if admin_signed_in?
         .admin_actions
           = link_to 'sign out', :sign_out
           = link_to '+ add post', :new_blog
@@ -25,8 +25,7 @@
           = link_to "Github", "http://github.com/444c43", class: "github"
         %nav
           = active_link_to "Blog", :blog_home
-          = active_link_to "Photos", photos_path
         %nav.bubble
-          = post.tag_list[0]
+          = #post.tag_list[0]
     %section
       = yield
