@@ -11,35 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417001850) do
+ActiveRecord::Schema.define(version: 20151113165439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "remember_token",  limit: 255
-    t.string   "session_token",   limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.string   "email",                           null: false
+    t.string   "password_digest",                 null: false
+    t.string   "password_reset_token", limit: 60, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  create_table "authem_sessions", force: :cascade do |t|
+    t.string   "role",                    null: false
+    t.integer  "subject_id",              null: false
+    t.string   "subject_type",            null: false
+    t.string   "token",        limit: 60, null: false
+    t.datetime "expires_at",              null: false
+    t.integer  "ttl",                     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "authem_sessions", ["expires_at", "subject_type", "subject_id"], name: "index_authem_sessions_subject", using: :btree
+  add_index "authem_sessions", ["expires_at", "token"], name: "index_authem_sessions_on_expires_at_and_token", unique: true, using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.text     "body"
     t.boolean  "published"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "title",      limit: 255
-    t.string   "slug",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "slug"
   end
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.integer  "taggable_id"
-    t.string   "taggable_type", limit: 255
+    t.string   "taggable_type"
     t.integer  "tagger_id"
-    t.string   "tagger_type",   limit: 255
+    t.string   "tagger_type"
     t.string   "context",       limit: 128
     t.datetime "created_at"
   end
@@ -48,8 +61,8 @@ ActiveRecord::Schema.define(version: 20150417001850) do
   add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name",           limit: 255
-    t.integer "taggings_count",             default: 0
+    t.string  "name"
+    t.integer "taggings_count", default: 0
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
