@@ -2,6 +2,7 @@ unless defined?(Rails)
 
   require 'active_record'
   require 'fabrication'
+  require 'yaml'
 
   connection_info = YAML.load(File.open("config/database.yml"))["test"]
   ActiveRecord::Base.establish_connection(connection_info)
