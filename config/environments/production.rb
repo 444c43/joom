@@ -6,7 +6,7 @@ Joom::Application.configure do
   config.assets.compress = true
   config.assets.compile = true
   config.assets.digest = true
-  config.assets.precompile += %w( home.sass session.sass)
+  config.assets.precompile = true 
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
 end

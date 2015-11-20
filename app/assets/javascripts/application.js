@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 //= require dummy_image.pack.js
-//= require common.js
