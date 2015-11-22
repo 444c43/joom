@@ -10,7 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require jquery.min
+//= require skel.min
+//= require util
+//= require main
 //= require dummy_image.pack.js
