@@ -1,3 +1,4 @@
+- content_for @titles, @posts
 #content
   %inner
     - @posts.each do |post|
@@ -15,7 +16,7 @@
               = post.created_at.strftime('%Y')
           %ul.stats
             %li
-              %a.icon.fa-comment{:href => "#"} 16
+              %a.icon.fa-comment{:href => blog_path(post.slug) + "#comments"} 16
         %a.image.featured{:href => "#"}
         %p
           = markdown(post.body[0..195])
