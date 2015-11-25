@@ -2,9 +2,6 @@
   %header
     %h2 Recent Posts
   %ul
-    %li
-      %a{:href => "#"} Lorem ipsum dolor
-    %li
-      %a{:href => "#"} Feugiat nisl aliquam
-    %li
-      %a{:href => "#"} Sed dolore magna
+    - @posts.each do |post|
+      %li= link_to post.title, blog_path(post.slug)
+

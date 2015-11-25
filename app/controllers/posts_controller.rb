@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @posts = admin_signed_in? ? posts : published_posts
   end
 
+  def show
+    @posts = admin_signed_in? ? posts : published_posts
+  end
+
   def create
     if post.save
       redirect_to :blog_home
