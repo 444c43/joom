@@ -16,6 +16,7 @@ gem 'pygmentize'
 gem 'rails', '4.2.5.rc2'
 gem 'redcarpet'
 gem 'test-unit'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
