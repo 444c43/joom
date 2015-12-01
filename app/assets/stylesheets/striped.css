@@ -1549,6 +1549,9 @@
 	}
 
 /* Basic */
+  section > ul a:link {
+    text-decoration: none;
+  }
 
 	body {
 		background-color: #e8e8e8;
@@ -2308,7 +2311,6 @@
 	@media screen and (min-width: 737px) {
 
 		/* Basic */
-
 			body {
 				height: 100%;
 				line-height: 1.75em;
