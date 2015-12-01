@@ -1,7 +1,6 @@
-- content_for @titles, @posts
 #content
   %inner
-    - @posts.each do |post|
+    - posts.each do |post|
       %article.box.post.post-excerpt
         %header
           %h2= link_to post.title, blog_path(post.slug)

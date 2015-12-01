@@ -4,3 +4,7 @@
   = render 'layouts/navigation'
   = render 'layouts/recent_posts'
   = render 'layouts/copyright'
+  - if admin_signed_in?
+    .admin_actions
+      = link_to 'sign out', :sign_out
+      = link_to '+ add post', :new_blog

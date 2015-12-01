@@ -1,8 +1,4 @@
 %nav#nav
   %ul
-    %li.current
-      %a{:href => "#"} Latest Post
-    %li
-      %a{:href => "#"} Latest
-    %li
-      %a{:href => "#"} Who Is 2toneDL?
+    %li.current= link_to 'Latest Post', root_path
+    %li= link_to 'Who Is 2toneDL?'
