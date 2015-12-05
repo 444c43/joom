@@ -8,7 +8,7 @@ gem 'bcrypt'
 gem 'capybara', '2.5.0'
 gem 'carrierwave'
 gem 'decent_exposure', '~> 2.3.2'
-gem 'haml'
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'pg'
@@ -18,6 +18,7 @@ gem 'redcarpet'
 gem 'test-unit'
 gem 'will_paginate', '~> 3.0.6'
 
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
