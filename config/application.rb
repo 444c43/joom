@@ -19,6 +19,8 @@ module Joom
     config.assets.version = '1.0'
     config.eager_load = true
     config.serve_static_files = true
+    config.autoload_paths << Rails.root.join('lib')
+    config.assets.initialize_on_precompile = false
 
     config.generators do |g|
       g.test_framework :rspec, fixture: true, views: false
