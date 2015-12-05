@@ -9,4 +9,5 @@ Joom::Application.configure do
   config.assets.precompile = true 
   config.i18n.fallbacks = true
   config.active_support.deprecation = :notify
+  config.log_level = :info
 end
