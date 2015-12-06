@@ -2,5 +2,5 @@
   %header
     %h2 Recent Posts
   %ul
-    - posts.limit(3).each do |post|
+    - recent_posts.each do |post|
       %li= link_to post.title, blog_path(post.slug)

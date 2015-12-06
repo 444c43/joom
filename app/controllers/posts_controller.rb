@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_admin, except: [:index, :show]
 
   expose(:posts) { get_posts }
+  expose(:recent_posts) { get_recent_posts }
   expose(:published_posts) { Post.published }
   expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
@@ -31,6 +32,10 @@ class PostsController < ApplicationController
   def get_posts
     available_posts = admin_signed_in? ? Post.all : published_posts
     available_posts.paginate(:page => params[:page], :per_page => 2)
+  end
+
+  def get_recent_posts
+    Post.all.published.limit(3)
   end
 
   def post_attributes
