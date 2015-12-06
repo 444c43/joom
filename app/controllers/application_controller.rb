@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_recent_posts
-    Post.all.published.where(id: 2..4)
+    Post.published.order('created_at DESC').where(id: 2..4)
   end
 
   def deny_admin_access
