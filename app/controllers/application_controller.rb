@@ -4,12 +4,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   expose(:recent_posts) { get_recent_posts }
+  expose(:latest_post) { get_latest_post }
 
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
 
   private
+
+  def get_latest_post
+    Post.published.first
+  end
 
   def get_recent_posts
     Post.published.order('created_at DESC').where(id: 2..4)
