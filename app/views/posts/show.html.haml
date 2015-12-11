@@ -1,9 +1,11 @@
 #content
-  %article
+  .post
     = render 'admin_links' if admin_signed_in?
     %h1= post.title
-    = post.created_at.strftime("%d%b%y")
-    = post.tag_list[0]
+    #post_date
+      %span= post.created_at.strftime("%d%b%y")
+    #post_tags
+      %span= post.tag_list[0]
     = markdown(post.body)
     %h2#comments Comments
     #disqus_thread
