@@ -22,8 +22,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post.destroy
-    redirect_to :blog_home
+    post.destroy!
+    redirect_to :root 
   end
 
   private

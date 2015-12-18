@@ -3,4 +3,4 @@
   = link_to 'edit', edit_blog_path(post.slug)
   = "-"
   = link_to 'delete', post_path(post.slug),
-    method: :delete, confirm: "You sure?"
+    method: :delete, data: { confirm: "You sure?" }
