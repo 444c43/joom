@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_admin, except: [:index, :show]
 
   expose(:posts) { get_posts }
-  expose(:published_posts) { Post.published }
+  expose(:published_posts) { Post.published.presence || [] }
   expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
   def create
@@ -29,7 +29,11 @@ class PostsController < ApplicationController
   private
 
   def get_posts
-    available_posts = admin_signed_in? ? Post.all : published_posts
+    available_posts = admin_signed_in? ? Post.all.presence || [] : published_posts
+    available_posts == [] ? available_posts : available_posts.paginate_posts
+  end
+
+  def paginate_posts
     available_posts.paginate(:page => params[:page], :per_page => 2)
   end
 

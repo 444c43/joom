@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   expose(:admin) { Admin.where(email: params[:email].downcase).first }
   expose(:posts) { get_posts }
-  expose(:published_posts) { Post.published }
+  expose(:published_posts) { Post.published.presence || [] }
 
   def create
     if admin && admin.authenticate(params[:password])
@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
   private
 
   def get_posts
-    admin_signed_in? ? Post.all : published_posts
+    admin_signed_in? ? Post.all.presence || [] : published_posts
   end
 end
