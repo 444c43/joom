@@ -29,11 +29,11 @@ class PostsController < ApplicationController
   private
 
   def get_posts
-    available_posts = admin_signed_in? ? Post.all.presence || [] : published_posts
-    available_posts == [] ? available_posts : available_posts.paginate_posts
+    available_posts = admin_signed_in? ? Post.all : published_posts
+    available_posts == [] ? available_posts : paginate(available_posts)
   end
 
-  def paginate_posts
+  def paginate(available_posts)
     available_posts.paginate(:page => params[:page], :per_page => 2)
   end
 
