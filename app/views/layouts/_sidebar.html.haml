@@ -6,5 +6,7 @@
   = render 'layouts/copyright'
   - if admin_signed_in?
     .admin_actions
+      %p
+        Admin Functions
       = link_to 'sign out', :sign_out
       = link_to '+ add post', :new_blog
