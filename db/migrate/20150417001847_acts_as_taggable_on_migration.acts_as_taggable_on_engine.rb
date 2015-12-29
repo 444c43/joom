@@ -2,11 +2,11 @@
 class ActsAsTaggableOnMigration < ActiveRecord::Migration
   def self.up
     create_table :tags do |t|
-      t.string :name
+      t.string :name, null: false
     end
 
     create_table :taggings do |t|
-      t.references :tag
+      t.references :tag, foreign_key: true
 
       # You should make sure that the column created is
       # long enough to store the required class names.
