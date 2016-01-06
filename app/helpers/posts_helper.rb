@@ -1,7 +1,15 @@
 module PostsHelper
 
   def markdown(text)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, space_after_headers: true, fenced_code_blocks: true)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, 
+                                       autolink: true, 
+                                       space_after_headers: true, 
+                                       fenced_code_blocks: true,
+                                       strikethrough: true,
+                                       superscript: true,
+                                       footnotes: true,
+                                       disable_indented_code_blocks: true,
+                                      )
     text = markdown.render(text)
     syntax_highlighter(text).html_safe
   end
