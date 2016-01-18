@@ -14,6 +14,11 @@ module PostsHelper
     syntax_highlighter(text).html_safe
   end
 
+  def snip_body(text)
+    snipped_text = Nokogiri::HTML(markdown(text)).xpath("//text()").to_s
+    snipped_text.scan(/\w+/)[0..50].join(' ') + '...'
+  end
+
   private
 
   def syntax_highlighter(html)

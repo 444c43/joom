@@ -13,5 +13,5 @@
             %span.year
               = post.created_at.strftime('%Y')
         %p
-          = markdown(post.body[0..140])
+          = snip_body(post.body)
   = render 'layouts/pagination'
