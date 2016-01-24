@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   def get_post_path
     return root_path if latest_post == {}
-    blog_path(latest_post)
+    return latest_post[:slug]
   end
 
   def get_recent_posts
