@@ -26,11 +26,11 @@ module PostsHelper
 
   def syntax_highlighter(html)
     doc = Nokogiri::HTML.fragment(html)
-    #doc.search("pre").each do |pre|
-    #  if (code = pre.child).name == 'code'
-    #    pre.replace Pygmentize.process(code.text.rstrip, code[:class])
-    #  end
-    #end
+    doc.search("pre").each do |pre|
+      if (code = pre.child).name == 'code'
+        pre.replace Pygmentize.process(code.text.rstrip, code[:class])
+      end
+    end
     doc.to_html
   end
 end
