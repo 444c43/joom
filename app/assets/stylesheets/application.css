@@ -11,5 +11,5 @@
  *= require_self
  *= require striped
  *= require additional
- *= require pygments
+ *= require solarized-dark
  */

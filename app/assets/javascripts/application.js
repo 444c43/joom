@@ -15,4 +15,9 @@
 //= require skel.min
 //= require util
 //= require main
+//= require highlight.pack.js
 //= require dummy_image.pack.js
+
+$(function(){
+  $('pre code, code').each(function(i, e) {hljs.highlightBlock(e)});
+})
