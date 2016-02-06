@@ -18,3 +18,52 @@ textarea {
   margin-top: 20%;
   margin-bottom: 20%;
 }
+
+table {
+  width: 100%;
+}
+
+td {
+  height: 50px;
+}
+
+.fa-github {
+  border-radius: 100%;
+  border: solid 1px #fff;
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1201px){
+  h2 {
+    font-size: 3.25em;
+    line-height: 1.25em;
+  }
+  .about-links a {
+    color: orange;
+  }
+}
+
+/* Narrow */
+
+@media screen and (min-width: 737px) and (max-width: 1200px){
+  .about-links a {
+    color: yellow;
+  }
+}
+
+/* Narrower */
+
+@media screen and (min-width: 737px) and (max-width: 1000px){
+  .about-links a {
+    color: green;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 736px){
+  .about-links a {
+    color: blue;
+  }
+}

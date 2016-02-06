@@ -1,17 +1,13 @@
 #content
-  %header#header 
-    %h2 About Me!
-    %nav.fa-container
-      %a.icon.fa-github{:href => "https://github.com/444c43"}
-        web developer
-      &nbsp;&bull;&nbsp;
-      %a.icon.fa-twitter{:href => "http://twitter.com/2toneDL"}
-        social bunny
-      %p
-      %a.icon.fa-bicycle{:href => "#"}
-        cyclist &nbsp;&bull;&nbsp;
-      %a.icon.fa-comment{:href => "#"}
-        social critic
-    %h2 About This Blog
-    %nav
-      About this blog
+  %h1.about-me
+    About Me!
+    %h2.outside-links
+      = render 'outside_links'
+    %h2.influences
+      Influences
+  %h1.about-blog
+    This Blog
+    %h2.purpose
+      Purpose
+    %h2.questions
+      Questions
