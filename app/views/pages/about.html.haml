@@ -1,17 +1,14 @@
 #content
-  %h1.about-me
-    About Me!
-    %h2.outside-links
-      Find Me Here
-      = render 'outside_links'
-    %h2.influences
-      Influences
-      = render 'influences'
-  %h1.about-blog
-    This Blog
-    %h2.purpose
-      Purpose
-      = render 'purpose'
-    %h2.questions
-      Questions
-      = render 'questions'
+  %div.about-me
+    %h1
+      %h2.outside-links
+        Find Me Here
+        = render 'outside_links'
+        %hr
+      %h2.influences
+        Influences
+        = render 'influences'
+        %hr
+      %h2.purpose
+        Purpose
+        = render 'purpose'
