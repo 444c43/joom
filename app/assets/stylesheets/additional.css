@@ -2,6 +2,10 @@
   font-weight: bold;
 }
 
+.post ul {
+  list-style: none;
+}
+
 div#post_date {
   font-style: italic;
 }
