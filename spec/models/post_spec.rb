@@ -13,22 +13,10 @@ describe Post do
   context 'add tags to post' do
     describe "existing post" do
       it "adds a tag" do
-        post = create :post
-        post.tag_list.add("one")
+        post = Post.new(title: 'A New Post', tag: { name: "one" })
         post.save!
 
         post.reload
-
-        expect(post.tag_list).to eq(["one"])
-      end
-    end
-
-    describe "new post" do
-      it "adds a tag" do
-        post = create :post, tag_list: ["one"]
-
-        post.reload
-
         expect(post.tag_list).to eq(["one"])
       end
     end
