@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_recent_posts
-    Post.published.order('created_at DESC').where(id: 2..4).presence || []
+    Post.published.order('created_at DESC').offset(1).first(limit=3)
   end
 
   def deny_admin_access
