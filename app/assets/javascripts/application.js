@@ -17,6 +17,7 @@
 //= require main
 //= require highlight.pack.js
 //= require dummy_image.pack.js
+//= require word_count.js
 
 $(function(){
   $('pre code, code').each(function(i, e) {hljs.highlightBlock(e)});
