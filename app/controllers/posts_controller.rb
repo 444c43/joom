@@ -1,24 +1,16 @@
 class PostsController < ApplicationController
-  before_filter :require_admin, except: [:index, :show]
+  before_filter :require_admin, except: [:show]
 
-  expose(:posts) { get_posts }
+  expose(:posts) { all_posts }
   expose(:published_posts) { Post.published.presence || [] }
   expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
   def create
-    if post.save
-      redirect_to root_path 
-    else
-      render :new
-    end
+    post.save ? redirect_to(root_path) : render(:new)
   end
 
   def update
-    if post.save
-      redirect_to :blog
-    else
-      render :edit
-    end
+    post.save ? redirect_to(root_path) : render(:edit)
   end
 
   def destroy
@@ -28,20 +20,16 @@ class PostsController < ApplicationController
 
   private
 
-  def get_posts
+  def all_posts
     available_posts = admin_signed_in? ? Post.all : published_posts
-    available_posts == [] ? available_posts : paginate(available_posts)
+    paginate(available_posts)
   end
 
   def paginate(available_posts)
-    available_posts.paginate(:page => params[:page], :per_page => 2)
+    available_posts.paginate(page: params[:page], per_page: 2)
   end
 
   def post_attributes
-    params.require(:post).permit(
-      :published,
-      :body,
-      :title
-    )
+    params.require(:post).permit(:published, :body, :title)
   end
 end
