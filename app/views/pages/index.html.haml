@@ -1,13 +1,11 @@
 #content
-  %h1.about-me
-    About Me!
-    %h2.outside-links
+  %ul
+    %li.about-me
+      = render 'who_is_dl'
       = render 'outside_links'
-    %h2.influences
-      Influences
-  %h1.about-blog
-    This Blog
-    %h2.purpose
-      Purpose
-    %h2.questions
-      Questions
+    %li.latest-post Latest Post
+    %article.box.post.post-excerpt
+      %header
+        %h2= link_to latest.title, blog_path(latest.slug)
+      %p
+        = snip_body(latest.body)

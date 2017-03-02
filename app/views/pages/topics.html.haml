@@ -1,0 +1,18 @@
+#content
+  %inner
+    - posts.each do |post|
+      %article.box.post.post-excerpt
+        %header
+          %h2= link_to post.title, blog_path(post.slug)
+        .info
+          %span.date
+            %span.month
+              = post.created_at.strftime('%b')
+            %span.day
+              = post.created_at.strftime('%d')
+            %span.year
+              = post.created_at.strftime('%Y')
+        %p
+          = snip_body(post.body)
+  = render 'layouts/pagination'
+
