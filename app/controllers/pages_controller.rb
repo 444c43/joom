@@ -1,10 +1,15 @@
 class PagesController < ApplicationController
-  expose(:posts)            { show_posts }
+  expose(:posts)            { show_posts       }
+  expose(:topic)            { topic            }
   expose(:latest)           { latest_post      }
   expose(:latest_post_path) { latest_post_path }
   expose(:recent)           { recent_posts     }
 
   private
+
+  def topic
+    params[:topic]
+  end
 
   def show_posts
     available_posts = Post.published.tagged_with params[:topic]
