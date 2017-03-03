@@ -3,7 +3,7 @@ tags = ["culture", "health", "jacksonville", "technology"]
 10.times do | title, blurb, body, created_at, updated_at, published|
   Post.create(
     title: Faker::Book.title,
-    blurb: Faker::Lorem.characters(50),
+    blurb: Faker::Lorem.words(25).join(" "),
     body: Faker::Lorem.paragraphs(3),
     created_at: Faker::Time.between(DateTime.now - 10, DateTime.now),
     updated_at: Date.today,
@@ -16,7 +16,7 @@ end
 4.times do | title, blurb, body, created_at, updated_at, published|
   Post.create(
     title: Faker::Book.title,
-    blurb: Faker::Lorem.characters(50),
+    blurb: Faker::Lorem.words(25).join(" "),
     body: Faker::Lorem.paragraphs(3),
     created_at: Faker::Time.between(DateTime.now - 10, DateTime.now),
     updated_at: Date.today,

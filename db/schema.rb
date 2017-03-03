@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303142245) do
+ActiveRecord::Schema.define(version: 20170303155520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170303142245) do
     t.datetime "updated_at"
     t.string   "title"
     t.string   "slug"
-    t.string   "blurb",      limit: 50
+    t.string   "blurb"
   end
 
   create_table "taggings", force: :cascade do |t|
