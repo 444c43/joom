@@ -1,5 +1,6 @@
-function wordCount() {
-  var text = document.getElementById("post_body").value;
-  var count = text.split(/ |\n/).filter(function(n){return n != ""}).length;
-  document.getElementById("word_count").innerText = "Total Words: " + count;
+function wordCount(displayElement, textAreaElement) {
+  console.log(displayElement + " " + textAreaElement);
+  var postBodyText = $(textAreaElement).val();
+  var count = postBodyText.split(/ |\n/).filter(function(n){return n != ""}).length;
+  $(displayElement + "span").text(count);
 }
