@@ -1,0 +1,4 @@
+#flash_messages
+  - flash.each do |key, value|
+    - value.each do |k, v|
+      %p= k.to_s.capitalize + " #{v.first}"

@@ -1,4 +1,5 @@
 %article.blog
+  = render 'shared/flash_messages' if flash
   = form_for post do |f|
     .field= f.check_box_with_label :published, 'publish?'
     .label= 'Title'

@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   scope :published, -> { where(published: true) }
 
   validates :title, presence: true, uniqueness: true
+  validates_length_of :blurbs, maximum: 25, too_long: "must be less 50 or fewer words"
 
   before_save :build_slug
 
@@ -16,4 +17,9 @@ class Post < ActiveRecord::Base
     where(["slug = ? OR id = ?", param, param.to_i]).first
   end
 
+  private
+
+  def blurbs
+   blurb.scan(/\w+/)
+  end
 end

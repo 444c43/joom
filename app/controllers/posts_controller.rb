@@ -7,12 +7,12 @@ class PostsController < ApplicationController
 
   def create
     post.tag_list.add(params["tag"]["name"])
-    post.save ? redirect_to(root_path) : render(:new)
+    post.save ? redirect : error_and_retry(:new)
   end
 
   def update
     update_post_tag unless post.tag_list.first == params["tag"]["name"]
-    post.save ? redirect_to(root_path) : render(:edit)
+    post.save ? redirect : error_and_retry(:edit)
   end
 
   def destroy
@@ -21,6 +21,16 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def error_and_retry(action)
+    flash[:notice] = post.errors.messages
+    render(action)
+  end
+
+  def redirect
+    flash.clear if flash
+    redirect_to root_path
+  end
 
   def update_post_tag
     post.tag_list = []
@@ -37,6 +47,6 @@ class PostsController < ApplicationController
   end
 
   def post_attributes
-    params.require(:post).permit(:published, :body, :title, :tag_list)
+    params.require(:post).permit(:published, :body, :blurb, :title, :tag_list)
   end
 end
