@@ -19,6 +19,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'faker'
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'heroku'
