@@ -6,10 +6,12 @@ class PostsController < ApplicationController
   expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
   def create
+    post.tag_list.add(params["tag"]["name"])
     post.save ? redirect_to(root_path) : render(:new)
   end
 
   def update
+    update_post_tag unless post.tag_list.first == params["tag"]["name"]
     post.save ? redirect_to(root_path) : render(:edit)
   end
 
@@ -19,6 +21,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def update_post_tag
+    post.tag_list = []
+    post.tag_list.add(params["tag"]["name"])
+  end
 
   def all_posts
     available_posts = admin_signed_in? ? Post.all : published_posts
@@ -30,6 +37,6 @@ class PostsController < ApplicationController
   end
 
   def post_attributes
-    params.require(:post).permit(:published, :body, :title)
+    params.require(:post).permit(:published, :body, :title, :tag_list)
   end
 end
