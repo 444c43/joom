@@ -7,5 +7,4 @@
     %article.box.post.post-excerpt
       %header
         %h2= link_to latest.title, blog_path(latest.slug)
-      %p
-        = snip_body(latest.body)
+      %p= latest.blurb
