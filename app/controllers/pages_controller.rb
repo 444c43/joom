@@ -1,14 +1,17 @@
 class PagesController < ApplicationController
-  expose(:posts)            { show_posts       }
-  expose(:topic)            { topic            }
-  expose(:latest)           { latest_post      }
-  expose(:latest_post_path) { latest_post_path }
-  expose(:recent)           { recent_posts     }
+  expose(:posts)            { show_posts             }
+  expose(:about)            { load_markdown "about"  }
+  expose(:intro)            { load_markdown "intro"  }
+  expose(:issues)           { load_markdown "issues" }
+  expose(:topic)            { params[:topic]         }
+  expose(:latest)           { latest_post            }
+  expose(:latest_post_path) { latest_post_path       }
+  expose(:recent)           { recent_posts           }
 
   private
 
-  def topic
-    params[:topic]
+  def load_markdown page_name
+    File.read("#{Rails.root}/app/views/pages/markdown/#{page_name}.md")
   end
 
   def show_posts
@@ -33,5 +36,4 @@ class PagesController < ApplicationController
   def paginate(available_posts)
     available_posts.paginate(page: params[:page], per_page: 2)
   end
-
 end

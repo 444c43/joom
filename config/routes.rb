@@ -5,6 +5,9 @@ Joom::Application.routes.draw do
   resources :posts
   resources :blog, controller: :posts
 
+  get '/who_is',       to: 'pages#who_is_dl'
+  get '/issues',       to: 'pages#issues'
+
   get '/culture',      to: 'pages#topics', defaults: { topic: 'culture' }
   get '/technology',   to: 'pages#topics', defaults: { topic: 'technology' }
   get '/health',       to: 'pages#topics', defaults: { topic: 'health' }
