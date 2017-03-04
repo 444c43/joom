@@ -1,6 +1,7 @@
 #sidebar
   %h1#logo
     = link_to '2toneDL', root_path
+  = render 'layouts/who_is_dl'
   = render 'layouts/navigation'
   = render 'layouts/copyright'
   - if admin_signed_in?
