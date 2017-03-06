@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def redirect
-    flash.clear if flash
+    flash&.clear
     redirect_to root_path
   end
 

@@ -20,6 +20,6 @@ class Post < ActiveRecord::Base
   private
 
   def blurbs
-   blurb.scan(/\w+/)
+    blurb.scan(/\w+/)
   end
 end

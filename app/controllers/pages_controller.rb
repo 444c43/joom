@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   private
 
-  def load_markdown page_name
+  def load_markdown(page_name)
     File.read("#{Rails.root}/app/views/pages/markdown/#{page_name}.md")
   end
 
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
   end
 
   def recent_posts
-    Post.published.order('created_at DESC').offset(1).first(limit = 3)
+    Post.published.order("created_at DESC").offset(1).first(limit = 3)
   end
 
   def paginate(available_posts)
