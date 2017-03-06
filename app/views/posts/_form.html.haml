@@ -8,7 +8,7 @@
     .field= f.text_field :blurb, onkeypress: "wordCount('#blurb_count ', '#post_blurb')"
     .label= 'Body'
     .field= f.text_area :body, onkeypress: "wordCount('#body_count ', '#post_body')"
-    .field= select(:tag, :name, options_for_select(["culture", "health", "jacksonville", "technology"]))
+    .field= select(:tag, :name, options_for_select(topics))
     %p#body_count
       Total Body Count:
       %span 0

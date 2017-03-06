@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_filter :require_admin, except: [:show]
 
   expose(:posts) { all_posts }
+  expose(:topics) { topics }
   expose(:published_posts) { Post.published.presence || [] }
   expose(:post, finder: :find_by_slug_or_id, attributes: :post_attributes)
 
@@ -21,6 +22,16 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def topics
+    [
+      "culture",
+      "development",
+      "health",
+      "jacksonville",
+      "technology"
+    ]
+  end
 
   def error_and_retry(action)
     flash[:notice] = post.errors.messages
