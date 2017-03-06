@@ -8,10 +8,7 @@ Joom::Application.routes.draw do
   get '/who_is',       to: 'pages#who_is_dl'
   get '/issues',       to: 'pages#issues'
 
-  get '/culture',      to: 'pages#topics', defaults: { topic: 'culture' }
-  get '/technology',   to: 'pages#topics', defaults: { topic: 'technology' }
-  get '/health',       to: 'pages#topics', defaults: { topic: 'health' }
-  get '/jacksonville', to: 'pages#topics', defaults: { topic: 'jacksonville' }
+  get '/:topic',      to: 'pages#topics'
 
   get  '/sign_in',  to: 'sessions#new',     as: :sign_in
   post '/sign_in',  to: 'sessions#create',  as: :create_session
