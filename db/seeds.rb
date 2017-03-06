@@ -1,5 +1,5 @@
 # create 10 published posts
-tags = ["culture", "health", "jacksonville", "technology"]
+tags = %w(culture health jacksonville technology)
 10.times do | title, blurb, body, created_at, updated_at, published|
   Post.create(
     title: Faker::Book.title,
