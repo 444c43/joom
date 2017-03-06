@@ -8,9 +8,9 @@ Joom::Application.routes.draw do
   get '/who_is',       to: 'pages#who_is_dl'
   get '/issues',       to: 'pages#issues'
 
-  get '/:topic',      to: 'pages#topics'
-
   get  '/sign_in',  to: 'sessions#new',     as: :sign_in
   post '/sign_in',  to: 'sessions#create',  as: :create_session
   get  '/sign_out', to: 'sessions#destroy', as: :sign_out
+
+  get '/:topic',      to: 'pages#topics'
 end
