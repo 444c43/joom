@@ -1,8 +1,18 @@
 %article.blog
+  = render 'shared/flash_messages' if flash
   = form_for post do |f|
     .field= f.check_box_with_label :published, 'publish?'
+    .label= 'Title'
     .field= f.text_field :title
-    .field= f.text_area :body, onkeypress: "wordCount()"
-    %p#word_count
-      Total Words: 0
+    .label= 'Blurb'
+    .field= f.text_field :blurb, onkeypress: "wordCount('#blurb_count ', '#post_blurb')"
+    .label= 'Body'
+    .field= f.text_area :body, onkeypress: "wordCount('#body_count ', '#post_body')"
+    .field= select(:tag, :name, options_for_select(["culture", "health", "jacksonville", "technology"]))
+    %p#body_count
+      Total Body Count:
+      %span 0
+    #blurb_count
+      Total Blurb Count:
+      %span 0
     .field= f.submit

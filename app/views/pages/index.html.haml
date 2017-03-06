@@ -1,0 +1,9 @@
+#content
+  .who_is
+    = markdown intro
+  = render 'outside_links'
+  .latest-post Latest Post
+  %article.latest
+    %header
+      %h2= link_to latest.title, blog_path(latest.slug)
+    %p= latest.blurb

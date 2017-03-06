@@ -1,3 +1,14 @@
+.social-media > a {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+}
+
+.social-media {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .post h1 {
   font-weight: bold;
 }
@@ -8,6 +19,10 @@
 
 div#post_date {
   font-style: italic;
+}
+
+div#flash_messages {
+  color: red;
 }
 
 textarea {
@@ -40,7 +55,7 @@ td {
 
 @media screen and (min-width: 1201px){
   h2 {
-    font-size: 3.25em;
+    font-size: 2em;
     line-height: 1.25em;
   }
   .about-links a {
