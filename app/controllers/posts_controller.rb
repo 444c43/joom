@@ -24,13 +24,11 @@ class PostsController < ApplicationController
   private
 
   def topics
-    [
-      "culture",
-      "development",
-      "health",
-      "jacksonville",
-      "technology"
-    ]
+    topic_list = ActsAsTaggableOn::Tag.all.order(:name).map { |tag| tag.name }
+    tag = post.tag_list.first
+    return topic_list if tag.nil?
+    topic_list.delete  tag
+    topic_list.unshift tag
   end
 
   def error_and_retry(action)
