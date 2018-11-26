@@ -22,7 +22,6 @@ group :development, :test do
   gem 'faker'
   gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'heroku'
   gem 'pry'
   gem 'therubyracer'
 end
