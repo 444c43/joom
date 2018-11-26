@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :post do
     title     "the title"
     body      "the body"
