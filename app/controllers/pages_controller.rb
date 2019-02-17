@@ -15,8 +15,16 @@ class PagesController < ApplicationController
   end
 
   def show_posts
-    available_posts = Post.published.tagged_with params[:topic]
+    available_posts = admin_signed_in? ? all_by_topic : published_by_topic
     paginate(available_posts)
+  end
+
+  def all_by_topic
+    Post.all.tagged_with params[:topic]
+  end
+
+  def published_by_topic
+    Post.published.tagged_with params[:topic]
   end
 
   def latest_post
